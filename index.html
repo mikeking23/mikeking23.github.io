@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael King · Accessibility & AI Research</title>
+<meta name="description" content="Michael King, Doctor of Technology student at Purdue University, researching open-source AI to make workplace training accessible for adults with dyslexia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f3;
+    --surface: #ffffff;
+    --text: #1d1d1b;
+    --muted: #55534e;
+    --line: #e4dfd3;
+    --accent: #8e6f1f;       /* deep gold, readable on light */
+    --accent-soft: #f3ecd9;
+    --link: #6b5214;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161614;
+      --surface: #1f1f1c;
+      --text: #efece4;
+      --muted: #b5b1a6;
+      --line: #34332e;
+      --accent: #d8b86a;
+      --accent-soft: #2b2718;
+      --link: #e3c67f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+  }
+  a { color: var(--link); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    padding: 3rem 0 2rem;
+  }
+  .hero-inner { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
+  .avatar {
+    width: 88px; height: 88px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 1.9rem; flex: none;
+    object-fit: cover;
+  }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .25rem; }
+  .role { margin: 0; color: var(--muted); }
+  .role strong { color: var(--text); font-weight: 700; }
+  .role.orcid { margin-top: .35rem; font-size: 1rem; }
+
+  main section { padding: 2.25rem 0; border-bottom: 1px solid var(--line); }
+  main section:last-child { border-bottom: 0; }
+  h2 {
+    font-size: .95rem; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--accent); margin: 0 0 1rem;
+  }
+  h3 { font-size: 1.3rem; line-height: 1.3; margin: 0 0 .5rem; }
+  p { margin: 0 0 1rem; }
+  .lead { font-size: 1.25rem; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .meta { color: var(--muted); font-size: 1rem; margin-bottom: 1rem; }
+  .tag {
+    display: inline-block; background: var(--accent-soft); color: var(--accent);
+    font-size: .85rem; font-weight: 700; padding: .15rem .6rem; border-radius: 999px;
+    margin-bottom: .75rem;
+  }
+  ul.rq { padding-left: 1.2rem; margin: 0 0 1rem; }
+  ul.rq li { margin-bottom: .5rem; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--bg);
+    font-weight: 700; text-decoration: none; padding: .7rem 1.1rem;
+    border-radius: 8px; margin: .25rem .5rem .25rem 0;
+  }
+  .btn.secondary { background: transparent; color: var(--link); border: 2px solid var(--accent); }
+  .btn:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible {
+    outline: 3px solid var(--accent); outline-offset: 2px;
+  }
+
+  dl.edu { margin: 0; }
+  dl.edu div { padding: .6rem 0; border-top: 1px solid var(--line); }
+  dl.edu div:first-child { border-top: 0; }
+  dl.edu dt { font-weight: 700; }
+  dl.edu dd { margin: 0; color: var(--muted); }
+
+  form { display: grid; gap: .9rem; }
+  label { font-weight: 700; display: block; margin-bottom: .3rem; }
+  input, textarea {
+    width: 100%; font: inherit; color: var(--text);
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 8px; padding: .7rem .8rem;
+  }
+  textarea { min-height: 8rem; resize: vertical; }
+  button[type=submit] { border: 0; cursor: pointer; font: inherit; }
+
+  footer { color: var(--muted); font-size: .95rem; padding: 2rem 0 3rem; }
+  .links a { margin-right: 1rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <!-- To use a photo: upload photo.jpg and replace the div below with
+         <img class="avatar" src="photo.jpg" alt="Michael King"> -->
+    <div class="avatar" aria-hidden="true">MK</div>
+    <div>
+      <h1>Michael King</h1>
+      <p class="role"><strong>Doctor of Technology Student</strong><br>Purdue University · Polytechnic Institute</p>
+      <p class="role orcid"><a href="https://orcid.org/0009-0001-6943-2296">ORCID 0009-0001-6943-2296</a></p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section aria-labelledby="research">
+    <h2 id="research">Research</h2>
+    <p class="lead">I study how open-source AI can make workplace training accessible to adults with dyslexia, without requiring them to disclose it.</p>
+    <p>Much corporate training is dense, text-heavy material. For the estimated 5–17% of adults with dyslexia, that format adds cognitive load that gets in the way of learning. My work combines multimedia learning theory, cognitive load theory, and Universal Design for Learning with open-source language and video models. The goal is to turn standard training into clear, audiovisual modules that help every learner.</p>
+  </section>
+
+  <section aria-labelledby="current">
+    <h2 id="current">Current work</h2>
+    <div class="card">
+      <span class="tag">Poster · 2026 Asian AHRD Conference, Tokyo</span>
+      <h3>Accessible Training for the Dyslexic Workforce: An Open-Source AI Blueprint</h3>
+      <p class="meta">Michael King &amp; Kevin Rose · Purdue University</p>
+      <p>This proposed study tests an HRD workflow that takes existing PowerPoint training, uses an open-source language model (Gemma) to rewrite it in plain language, and generates short training scenes with an open-source video model (LTX-2). Experts review every module before learners see it.</p>
+      <p><strong>Research questions</strong></p>
+      <ul class="rq">
+        <li>Do dyslexic adults understand AI-generated audiovisual training better than traditional text-based training?</li>
+        <li>Does their confidence in understanding differ between the two formats?</li>
+        <li>How accurately does the pipeline reproduce the source content (errors, omissions, hallucinations)?</li>
+        <li>How does production effort compare with a conventional training workflow?</li>
+      </ul>
+      <a class="btn secondary" href="#contact">Get in touch about this work</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="about">
+    <h2 id="about">About</h2>
+    <p>I bring about two decades of experience in technology, cybersecurity, and program leadership, much of it spent supporting operations worldwide. I'm based in Japan, and my research sits where that practical experience meets accessibility: building AI tools that fit how real organizations create and deliver training.</p>
+    <dl class="edu">
+      <div><dt>Doctor of Technology (in progress, expected 2028)</dt><dd>Purdue University · Research area: Accessibility and AI</dd></div>
+      <div><dt>M.S., Cybersecurity</dt><dd>DePaul University</dd></div>
+      <div><dt>MBA</dt><dd>Indiana University</dd></div>
+      <div><dt>B.S., Engineering</dt><dd>Robert Morris University</dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="contact">
+    <h2 id="contact">Contact</h2>
+    <p>I'd like to hear from researchers, HRD practitioners, and anyone working on accessible learning.</p>
+    <form action="https://formspree.io/f/xdapbkkl" method="POST">
+      <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="msg">Message</label><textarea id="msg" name="message" required></textarea></div>
+      <div><button type="submit" class="btn">Send message</button></div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p class="links">
+    <a href="https://orcid.org/0009-0001-6943-2296">ORCID: 0009-0001-6943-2296</a>
+    <!-- Add LinkedIn once your profile reflects your research:
+    <a href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a> -->
+  </p>
+  <p>© 2026 Michael King · This page uses the Atkinson Hyperlegible typeface, designed for readability.</p>
+</footer>
+
+</body>
+</html>

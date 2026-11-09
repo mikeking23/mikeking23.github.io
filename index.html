@@ -80,6 +80,7 @@
     padding: 1.5rem;
   }
   .meta { color: var(--muted); font-size: 1rem; margin-bottom: 1rem; }
+  .cite { padding-left: 1.5rem; text-indent: -1.5rem; }
   .tag {
     display: inline-block; background: var(--accent-soft); color: var(--accent);
     font-size: .85rem; font-weight: 700; padding: .15rem .6rem; border-radius: 999px;
@@ -143,7 +144,7 @@
   <section aria-labelledby="current">
     <h2 id="current">Current work</h2>
     <div class="card">
-      <span class="tag">Poster · 2026 Asian AHRD Conference, Tokyo</span>
+      <span class="tag">Refereed poster · 2026 Asian AHRD Conference, Tokyo</span>
       <h3>Accessible Training for the Dyslexic Workforce: An Open-Source AI Blueprint</h3>
       <p class="meta">Michael King &amp; Kevin Rose · Purdue University</p>
       <p>This proposed study tests an HRD workflow that takes existing PowerPoint training, uses an open-source language model (Gemma) to rewrite it in plain language, and generates short training scenes with an open-source video model (LTX-2). Experts review every module before learners see it.</p>
@@ -154,13 +155,20 @@
         <li>How accurately does the pipeline reproduce the source content (errors, omissions, hallucinations)?</li>
         <li>How does production effort compare with a conventional training workflow?</li>
       </ul>
+      <a class="btn" href="papers/King_Rose_2026_Accessible_Training_Dyslexic_Workforce_AHRD_Asia.pdf">Read the paper (PDF)</a>
       <a class="btn secondary" href="#contact">Get in touch about this work</a>
     </div>
   </section>
 
+  <section aria-labelledby="publications">
+    <h2 id="publications">Publications</h2>
+    <p class="cite">King, M., &amp; Rose, K. (2026). Accessible training for the dyslexic workforce: An open-source AI blueprint. In <em>2026 Asian AHRD Conference in Japan: The future of HRD: Reimagining education, work, and society in the 21st century</em> (pp. 648–655). Toyo University. <a href="papers/King_Rose_2026_Accessible_Training_Dyslexic_Workforce_AHRD_Asia.pdf">PDF</a></p>
+    <p class="meta">Presented as a refereed poster, November 7, 2026, Toyo University Hakusan Campus, Tokyo.</p>
+  </section>
+
   <section aria-labelledby="about">
     <h2 id="about">About</h2>
-    <p>I bring about two decades of experience in technology, cybersecurity, and program leadership, much of it spent supporting operations worldwide. I'm based in Japan, and my research explores building AI tools that can impact the lives of those with learning differences.</p>
+    <p>I bring about two decades of experience in technology, cybersecurity, and program leadership, much of it spent supporting operations worldwide. I'm based in Japan, and my research sits where that practical experience meets accessibility: building AI tools that fit how real organizations create and deliver training.</p>
     <dl class="edu">
       <div><dt>Doctor of Technology (in progress, expected 2028)</dt><dd>Purdue University · Research area: Accessibility and AI</dd></div>
       <div><dt>MBA</dt><dd>Indiana University</dd></div>
@@ -171,7 +179,7 @@
 
   <section aria-labelledby="contact">
     <h2 id="contact">Contact</h2>
-    <p>I'd like to hear from researchers, intervention specialists, or anyone working on accessible learning.</p>
+    <p>I'd like to hear from researchers, HRD practitioners, and anyone working on accessible learning.</p>
     <form action="https://formspree.io/f/xdapbkkl" method="POST">
       <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
       <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
